@@ -1,9 +1,12 @@
+// vite.config.js
 import { defineConfig } from 'vite';
+import history from 'vite-plugin-history';
 
 export default defineConfig({
-  build: {
-    rollupOptions: {
-      external: '/src/main.jsx' // Trata de externalizar este módulo si es necesario
-    }
-  }
+  plugins: [
+    history({
+      index: '/index.html', // asegúrate de que apunta al archivo correcto
+    }),
+  ],
+  // Otras configuraciones...
 });
